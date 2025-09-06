@@ -2,7 +2,7 @@ services:
   - type: web
     name: kamzy-love-calculator
     env: python
-    plan: free
     buildCommand: |
       cd frontend && npm install && npm run build
-    startCommand: bash start.sh
+    startCommand: gunicorn app:app
+    plan: free
